@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+  <title>Elissa Harvey</title>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $(".paintings").click(function(){
+
+        $(".content-container").css("display","none")
+        $(".painting-container").css("display", "block");
+
+      });
+
+      $(".drawings").click(function(){
+
+        $(".content-container").css("display","none")
+        $(".drawing-container").css("display", "block");
+
+      });
+
+    });
+  </script>
+  <style>
+    body{
+    background-color: #f9f5f5;
+    margin: 0;
+    padding:0;
+    }
+    .side-bar{
+      height: 100vh;
+      width: 230px;
+      position: fixed;
+      border-right: 1px solid lightgrey;
+      box-shadow: -6px 0px 15px -4px white inset,  2px 0px 15px -4px pink;
+      background-color: #f9f5f5;
+    }
+    .elissa{
+      color: #f9f5f5;
+      font-size: 45px;
+      font-family: times;
+      position: absolute;
+      left: 45px;
+      top: 45px;
+      line-height: 40px;
+      -webkit-text-stroke: .9px blue;
+    }
+    .icon{
+      width: 50px;
+      height: 50px;
+      position: relative;
+      float: left;
+      margin: 5vh 90px;
+      outline: 3px double green;
+      color: green;
+    }
+    .icon:hover{
+      text-decoration: underline;
+    }
+    .icon-text{
+      position: absolute;
+      bottom: -25px;
+      text-align: center;
+      width: 100px;
+      left: -24px;
+      text-decoration: inherit;
+    }
+    .icon-container{
+      position: absolute;
+      top: 150px;
+      width: 230px;
+      height: 60vh;
+    }
+    .painting-container{
+    }
+    .painting-img{
+      background-size: 55vw auto;
+      width: 80%;
+      height: 100%;
+      min-height: 700px;
+      background-repeat: no-repeat;
+      margin: 30px 10%;
+      background-position: center;
+    }
+    .content-container{
+      display: none;
+      position: fixed;
+      left: 230px;
+      top:0;
+      width: calc(100vw - 230px);
+      height: 100vh;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-bar">
+    <div class="elissa"><em>Elissa<br>Harvey</em></div>
+    <div class="icon-container">
+      <div class="icon paintings"><div class="icon-text"><em>paintings</em></div></div>
+      <div class="icon drawings" style="outline-color:purple; color: purple;"><div class="icon-text"><em>drawings</em></div></div>
+      <div class="icon" style="outline-color:red; color: red;"><div class="icon-text"><em>poems</em></div></div>
+      <div class="icon" style="outline-color:orange; color: orange;"><div class="icon-text"><em>info</em></div></div>
+    </div>
+  </div>
+
+  <div class="painting-container content-container">
+    <div class="painting-img" style="background-image: url(images/leafs_1250.png)"></div>
+    <div class="painting-img" style="background-image: url(images/painting2-copy_3_916.png)"></div>
+  </div>
+
+  <div class="drawing-container content-container">
+    <div class="painting-img" style="background-image: url(images/Scanned-Image_2x.jpeg)"></div>
+    <div class="painting-img" style="background-image: url(images/Scanned-Image-1_2x.jpeg)"></div>
+  </div>
+
+</body>
+</html>
