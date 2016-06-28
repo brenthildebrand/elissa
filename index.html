@@ -12,7 +12,9 @@
         $(".icon-container").toggleClass("start");
         $(".icon").toggleClass("icon-rotate");
         $(".elissa").toggleClass("elissa-start");
+        $(".harvey").toggleClass("harvey-start");
         $(".side-bar").toggleClass("side-bar-start");
+        $(".icon").toggleClass("icon-start");
 
 
       });
@@ -22,12 +24,34 @@
         $(".content-container").css("display","none")
         $(".painting-container").css("display", "block");
 
+        if($(".icon-container").hasClass("start")){
+
+          $(".icon-container").toggleClass("start");
+          $(".icon").toggleClass("icon-rotate");
+          $(".elissa").toggleClass("elissa-start");
+          $(".harvey").toggleClass("harvey-start");
+          $(".side-bar").toggleClass("side-bar-start");
+          $(".icon").toggleClass("icon-start");
+
+        }
+
       });
 
       $(".drawings").click(function(){
 
         $(".content-container").css("display","none")
         $(".drawing-container").css("display", "block");
+
+        if($(".icon-container").hasClass("start")){
+
+          $(".icon-container").toggleClass("start");
+          $(".icon").toggleClass("icon-rotate");
+          $(".elissa").toggleClass("elissa-start");
+          $(".harvey").toggleClass("harvey-start");
+          $(".side-bar").toggleClass("side-bar-start");
+          $(".icon").toggleClass("icon-start");
+
+        }
 
       });
 
@@ -39,6 +63,7 @@
     margin: 0;
     padding:0;
     }
+
     .side-bar{
       height: 100vh;
       width: 230px;
@@ -47,11 +72,12 @@
       box-shadow: -6px 0px 15px -4px white inset,  2px 0px 15px -4px pink;
       background-color: #f9f5f5;
       -webkit-transition: all 1.5s;
+      z-index: 2;
     }
     .side-bar-start{
       width: 100vw;
     }
-    .elissa{
+    .name{
       color: #f9f5f5;
       font-size: 45px;
       font-family: times;
@@ -63,20 +89,39 @@
       -webkit-transition: all 1.5s;
       z-index: 2;
     }
+    .elissa{
+      top: 45px;
+      width: 110px;
+    }
+    .harvey{
+      top: 85px;
+      width: 132px;
+    }
     .elissa-start{
-      left:50vw;
-      top: 30vh;
-      margin-left: -75px;
+      left: calc(50vw - 55px);
+      top: 250px;
+      margin-left: -65px;
+    }
+    .harvey-start{
+      left: calc(50vw - 66px);
+      top: 250px;
+      margin-left: 65px;
     }
     .icon{
       width: 50px;
       height: 50px;
       position: relative;
       float: left;
-      margin: 5vh 90px;
+      margin-left: 90px;
       outline: 3px double green;
       color: green;
       transition: 1.5s;
+    }
+    .icon + .icon {
+      margin-top: 6vw;
+    }
+    .icon-start + .icon-start {
+      margin-top: 66px
     }
     .icon:hover{
       text-decoration: underline;
@@ -100,9 +145,9 @@
       transition: 1.5s;
     }
     .start{
-      left: 50vw;
+      height: 400px;
+      left: calc(50vw - 106px);
       -webkit-transform: rotate(-90deg);
-      margin-left: -20vh;
     }
     .icon-rotate{
       -webkit-transform: rotate(90deg);
@@ -130,15 +175,17 @@
   </style>
 </head>
 <body>
-  <div class="side-bar">
-    <div class="elissa"><em>Elissa<br>Harvey</em></div>
-    <div class="icon-container">
-      <div class="icon paintings"><div class="icon-text"><em>paintings</em></div></div>
-      <div class="icon drawings" style="outline-color:purple; color: purple;"><div class="icon-text"><em>drawings</em></div></div>
-      <div class="icon" style="outline-color:red; color: red;"><div class="icon-text"><em>poems</em></div></div>
-      <div class="icon" style="outline-color:orange; color: orange;"><div class="icon-text"><em>info</em></div></div>
+  <div class="side-bar side-bar-start">
+    <div class="elissa name elissa-start"><em>Elissa</em></div>
+    <div class="harvey name harvey-start"><em>Harvey</em></div>
+    <div class="icon-container start">
+      <div class="icon paintings icon-rotate icon-start"><div class="icon-text"><em>paintings</em></div></div>
+      <div class="icon drawings icon-rotate icon-start" style="outline-color:purple; color: purple;"><div class="icon-text"><em>drawings</em></div></div>
+      <div class="icon icon-rotate icon-start" style="outline-color:red; color: red;"><div class="icon-text"><em>poems</em></div></div>
+      <div class="icon icon-rotate icon-start" style="outline-color:orange; color: orange;"><div class="icon-text"><em>info</em></div></div>
     </div>
   </div>
+
 
   <div class="painting-container content-container">
     <div class="painting-img" style="background-image: url(images/leafs_1250.png)"></div>
